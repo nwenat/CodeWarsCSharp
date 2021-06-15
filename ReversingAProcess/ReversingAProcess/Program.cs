@@ -9,7 +9,8 @@ namespace ReversingAProcess
         {
             //Console.WriteLine(Decode("1234567890gf"));
             //Console.WriteLine(Decode("1273409kuqhkoynvvknsdwljantzkpnmfgf"));
-            Console.WriteLine(Decode("5057aan"));
+            //Console.WriteLine(Decode("5057aan"));
+            Console.WriteLine(Decode("105860ymmgegeeiwaigsqkcaeguicc"));
             Console.WriteLine("uogbucwnddunktsjfanzlurnyxmx");
         }
 
@@ -19,8 +20,24 @@ namespace ReversingAProcess
             int j = Int32.Parse(r.Substring(0, x));
             string code = r.Substring(x, r.Length - x);
 
-            string result = "";
+            for (char i = 'a'; i <= 'z'; i++)
+            {
+                int a = (int)i - 97;
 
+                for (int h = 0; h < 26; h++)
+                {
+                    if (h * j % 26 == a)
+                    {
+                        break;
+                    }
+                    if (h == 25)
+                    {
+                        return "Impossible to decode";
+                    }
+                }
+            }
+
+            string result = "";
             foreach (char c in code)
             {
                 int a = (int)c - 97;
@@ -33,10 +50,6 @@ namespace ReversingAProcess
                         b = (char)(i + 97);
                         result += b;
                         break;
-                    }
-                    if (i == 25 && b.Equals(null))
-                    {
-                        return "Impossible to decode";
                     }
                 }
             }
