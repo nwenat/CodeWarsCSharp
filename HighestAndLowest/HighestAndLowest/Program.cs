@@ -12,8 +12,18 @@ namespace HighestAndLowest
 
         public static string HighAndLow(string numbers)
         {
-            int min = Int32.Parse(numbers.Substring(0, numbers.IndexOf(" ")));
-            int max = Int32.Parse(numbers.Substring(0, numbers.IndexOf(" ")));
+            int min;
+            int max;
+            if (numbers.Contains(" "))
+            {
+                min = Int32.Parse(numbers.Substring(0, numbers.IndexOf(" ")));
+                max = Int32.Parse(numbers.Substring(0, numbers.IndexOf(" ")));
+            } else
+            {
+                min = Int32.Parse(numbers);
+                max = Int32.Parse(numbers);
+            }
+            
             int i;
             string[] arr = numbers.Split(" ");
             foreach (string s in arr)
