@@ -21,10 +21,6 @@ namespace LastSurvivor
             
             for (int i = 0; i < coords.Length; i++)
             {
-                //if (coords[i] >= result.Length)
-                //{
-                //    continue;
-                //}
                 result = result.Remove(coords[i], 1);
                 Console.WriteLine(result + "   -   " + coords[i]);
             }
