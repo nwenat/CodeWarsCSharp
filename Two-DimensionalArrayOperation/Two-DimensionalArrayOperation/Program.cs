@@ -20,7 +20,6 @@ namespace Two_DimensionalArrayOperation
                 {
                     sum += array[i, j];
                 }
-                Console.WriteLine(sum);
                 result *= sum;
                 sum = 0;
             }
